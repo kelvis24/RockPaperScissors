@@ -1,11 +1,11 @@
 import random, sys
-
     
+    print('ROCK-PAPER-SCISSORS')
     win = 0
     loss = 0
     draws = 0
-    
-    
+
+
     while True: #the main code of the entire game
         
         while True: #Gets the required user output
@@ -13,24 +13,24 @@ import random, sys
             
             userInput = input()
             
-            if userInput == q:
+            if userInput == 'q':
                 sys.exit()
-            elif userInput == r or userInput == p or userInput = s:
+            elif userInput == 'r' or userInput == 'p' or userInput = 's':
                 print('User entered ' + userInput + '...')
                 break
         
 
-        
+        # getting the required random number
         randomInput = random.randint(1,3)
         
         if randomInput == 1:
-            computerInput = r
+            computerInput = 'r'
             print('Computer chose Rock')
         elif randomInput == 2:
-           computerInput = p
+           computerInput = 'p'
            print('Computer chose Paper')
         elif randomInput == 3:
-           computerInput = s
+           computerInput = 's'
            print('Computer chose Scissors')
         
 
@@ -39,22 +39,22 @@ import random, sys
         if computerInput == userInput:
             print('it is a tie')
             draws = draws + 1
-        elif computerInput == r && userInput == p:  
+        elif computerInput == 'r' and userInput == 'p':  
             print('Paper beats rock so User wins')
             win = win + 1            
-        elif computerInput == p && userInput == r:
+        elif computerInput == 'p' and userInput == 'r':
             print('Paper beats rock so Computer wins')
             loss = loss + 1    
-        elif computerInput == r && userInput == s:
+        elif computerInput == 'r' and userInput == 's':
             print('Rock beats Scissors so Computer wins')
             loss = loss + 1
-        elif computerInput == s && userInput == r:
+        elif computerInput == 's' and userInput == 'r':
             print('Rock beats Scissors so User wins')
             win = win + 1
-        elif computerInput == s && userInput == p:
+        elif computerInput == 's' and userInput == 'p':
             print('scissors beat paper so Computer wins')
             loss = loss + 1
-        elif computerInput == p && userInput == s:
+        elif computerInput == 'p' and userInput == 's':
             print('scissors beat paper so User wins')
             win = win + 1
             
@@ -70,7 +70,16 @@ import random, sys
                 
         
         
+    print('The game has ended')
     
+    if win > loss:
+        print('You won')
+    elif loss > win:
+        print('You lost')
+    else:
+        print('You drew')    
+    
+    print('You had %s wins, %s losses, %s draws' % (win, loss, draws))
     
     
     
